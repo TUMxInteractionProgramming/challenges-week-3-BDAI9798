@@ -23,24 +23,73 @@ button, strong {
 }
 
 
-
 /* APP BAR */
 
 /* #4 #sweat address both #app-bar s */
 h1 {
     background-color: #3F51B5;
     color: white;
+
+
+    position: relative;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    height:64px;
+
+    box-sizing:border-box;
+    padding:24px 16px 20px 16px;
+}
+h1 a{
+    color:white;
+
+}
+#app-bar-2 img{
+position: absolute;
+right:16px;
+    vertical-align: middle;
+}
+
+
+h1#app-bar-1{
+
+    padding-left:72px;
+
+}
+h1#app-bar-1 img{
+    position: absolute;
+    left:16px;
+    bottom:0px;
 }
 
 
 /* CHANNELS LIST */
+#channels{
+    position: absolute;
+
+    width: 40%;
+    height: 100%; 
+    background-color: #3F51B5;
+}
+#chat{
+    position:absolute;
+        width:60%;
+        height:100%;
+        left:40%;
+}
 
 /* #4 #sweat #channels */
+
 ul {
     /* #3 #channels #list modifies h2 to ul */
     background-color: white;
     /* #3 #channels #bullets removed */
     list-style-type: none;
+    position: absolute;
+    top:64px;
+    bottom:72px;
+    overflow-y: auto;
+    width:100%;
 }
 
 li {
@@ -49,8 +98,10 @@ li {
     height: 48px;
     padding: 16px;
     font-size: 16px;
+
     /* #4 #channel tiles are separated by #lines */
     border-bottom: 1px solid #F5F5F5;
+    position: relative;
 }
 
 /* #4 active #channel is #highlighted */
@@ -59,23 +110,34 @@ li.selected {
     border-left: 4px solid #3F51B5;
 }
 
+li .channel-meta{
+    position: absolute;
+    right:16px;
+    vertical-align: middle;
+    top:12px;
+}
+
 li img {
-    /* #4 #middle vertical alignment of icons in the #channels list */
+   /* #4 #middle vertical alignment of icons in the #channels list */
     vertical-align: middle;
 }
 
 /* TAB BAR */
 
 /* #4 #sweat #tab-bar */
-#tab-bar {
+#tab-bar, #chat-bar{
     /* #3 #tab-bar #container should be white */
     background-color: white;
     /* #3 #tab-bar #container has all buttons centered */
     text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
 }
 
 /* #4 add styles to #tab-bar #buttons */
-#tab-bar button {
+#tab-bar button, #chat-bar button {
     background-color: white;
     border: none;
     font-size: 13px;
@@ -84,6 +146,8 @@ li img {
     width: 33%;
     height: 72px;
     padding: 16px;
+
+    flex-grow: 1;
 }
 
 /* #4 #tab-bar buttons do have a #line-break and images are centered due to the left&right auto margin */
@@ -99,8 +163,27 @@ li img {
 }
 
 
+
 /* MESSAGES */
 /* #4 select #specific #messages by class and re-assign element styles according to their #hierarchy in a nested way */
+#chat{
+    position:absolute;
+    width:60%;
+    height:100%;
+    left:40%;
+}
+
+
+#messages{
+    /* #5 #messages are now wrapped in a div to #scroll properly */
+    position: absolute;
+    width: 100%;
+    top: 64px;
+    bottom: 72px;
+    overflow-y: auto;
+}
+
+
 .message {
     /* #3 #chat #width*/
     width: 80%;
@@ -110,11 +193,16 @@ li img {
 
     /* #4 #message distance to next message container*/
     margin-bottom: 8px;
+    position: relative;
 }
 
 
 .message h3 {
     font-size: medium;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .message h3 em {
@@ -125,6 +213,8 @@ li img {
 .message h3 a {
     /* #3 #chat #link color is primary text */
     color: black;
+
+    width:33%;
 }
 
 .message p {
@@ -136,10 +226,40 @@ li img {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
 }
 
 /* #4 left align own #messages using #margins */
 .message.own {
     margin-left: 17.5%;
+}
+
+
+#chat-bar button{
+    width:auto;
+    flex-grow:0;
+  
+}
+#emojis{
+    background-color: white;
+    border:1px solid black;
+
+    position: absolute;
+    box-sizing: border-box;
+    height:300px;
+    width:300px;
+    left:16px;
+    padding:16px;
+    top:-284px;
+
+    text-align: left;
+    font-size: 28px;
+    /* initially emoji box is hidden */
+    display: none;
+
+
 }
 
